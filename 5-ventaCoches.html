@@ -1,0 +1,78 @@
+<!--EJERCICIO 5: Realizar una función para una tienda de coches en donde se deberá calcular: 
+Si el coche a la venta es un FORD FIESTA, aplicar un 5% de descuento en la compra. Si el 
+coche a la venta es un FORD FOCUS, el descuento será del 10% y si es un FORD ESCAPE 
+el descuento será del 20%. Mostrar en html el coche seleccionado y el descuento que se 
+aplicara en base a lo que selecciono el usuario -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coches</title>
+</head>
+
+<body >
+    <header style="width: 100%; font-size: 3rem; text-align:center;"><nav><h1>CARSPOT</h1></nav></header>
+    <section style="display: flex; justify-content: center; gap:30px; text-align: center;">
+        <div>
+            <img src="https://th.bing.com/th/id/R.d65bc176ef2f99c1a303f7b54bc90409?rik=wsb7Jz2MfAO61Q&pid=ImgRaw&r=0" style="width: 300px; " alt="">
+            <h2 >FORD FOCUS</h2>
+            <p>Precio: $ 5000</p>
+            <button style="padding: 5% 3%;" id="botonFocus">Seleccionar</button>
+        </div>
+        <div>
+            <img src="https://th.bing.com/th/id/OIP.o7R2ZlFPQPd4wJj3kqXc3gHaFj?rs=1&pid=ImgDetMain" style="width: 300px;" alt="">
+            <h2 >FORD ESCAPE</h2>
+            <p>Precio: $ 8900</p>
+            <button style="padding: 5% 3%;" id="botonEscape">Seleccionar</button>
+        </div>
+        <div>
+            <img src="https://th.bing.com/th/id/R.877f35284072a31f1a2eb083c4eec3cc?rik=%2f%2bdwOOWxP%2fgZ8A&pid=ImgRaw&r=0" style="width: 300px;" alt="">
+            <h2>FORD FIESTA</h2>
+            <p>Precio: $ 3600</p>
+            <button style="padding: 5% 3%;" id="botonFiesta">Seleccionar</button>
+        </div>
+    </section>
+    
+</body>
+<script>
+    /*EJERCICIO 5: Realizar una función para una tienda de coches en donde se deberá calcular: 
+Si el coche a la venta es un FORD FIESTA, aplicar un 5% de descuento en la compra. Si el 
+coche a la venta es un FORD FOCUS, el descuento será del 10% y si es un FORD ESCAPE 
+el descuento será del 20%. Mostrar en html el coche seleccionado y el descuento que se 
+aplicara en base a lo que selecciono el usuario */
+
+
+    let botonFocus = document.getElementById('botonFocus');
+    let botonEscape = document.getElementById('botonEscape');
+    let botonFiesta = document.getElementById('botonFiesta');
+
+    let descuento = 0;
+
+
+
+    botonFocus.addEventListener('click', function() {
+            descuento = 0.1;
+            let coche = "FORD FOCUS"
+            let precio = 5000;
+            calculoDescuento(coche, descuento, precio);
+        })
+    botonEscape.addEventListener('click', function() {
+        descuento = 0.2;
+        let coche = "FORD ESCAPE"
+        let precio = 8900;
+        calculoDescuento(coche, descuento, precio);
+    })
+    botonFiesta.addEventListener('click', function() {
+        descuento = 0.05;
+        let coche = "FORD FIESTA"
+        let precio = 3600;
+         calculoDescuento(coche, descuento, precio);
+    })
+
+    function calculoDescuento(coche, descuento,precio){
+        let precioFinal = precio - (precio* descuento);
+        alert("Elegiste el " + coche + ", recibes un descuento del " + (descuento * 100) + "% \nPRECIO FINAL: $"+ precioFinal );
+    }
+</script>
+</html>
